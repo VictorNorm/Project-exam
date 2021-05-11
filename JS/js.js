@@ -1,4 +1,4 @@
-const url = "http://hjulbent.no/project-exam/wp-json/wp/v2/posts?per_page=12";
+const url = "https://hjulbent.no/project-exam/wp-json/wp/v2/posts?per_page=12";
 
 // ?_embed
 // ?per_page=100
@@ -86,10 +86,6 @@ async function getPosts() {
             }
             
         })
-
-
-
-
 
 
     } catch (error) {
