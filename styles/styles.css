@@ -96,7 +96,8 @@ main {
     margin: 30px;
     padding: 30px;
     justify-content: flex-start;
-   
+    overflow: hidden;
+    transition: all 1s;
 }
 
 .cardContainer1,
