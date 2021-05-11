@@ -64,7 +64,7 @@ async function getPosts() {
 
         buttonNext.addEventListener('click', function() {
 
-            if(carouselContainer.style.justifyContent === "flex-start") {
+            if(carouselContainer.style.justifyContent === "") {
                 carouselContainer.style.justifyContent = "center";
                 console.log(carouselContainer.style.justifyContent)
              } else if(carouselContainer.style.justifyContent === "center") {
