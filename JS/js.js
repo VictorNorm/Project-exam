@@ -1,9 +1,18 @@
-const url = "http://hjulbent.no/project-exam/wp-json/wp/v2/posts?_embed";
+const url = "http://hjulbent.no/project-exam/wp-json/wp/v2/posts?per_page=12";
+
+// ?_embed
+// ?per_page=100
 
 const carousel = document.querySelector(".carousel");
 
+const carouselContainer = document.querySelector(".carouselContainer");
+
 const buttonPrev = document.querySelector(".carousel__button--prev");
 const buttonNext = document.querySelector(".carousel__button--next");
+
+const cardContainer1 = document.querySelector(".cardContainer1");
+const cardContainer2 = document.querySelector(".cardContainer2");
+const cardContainer3 = document.querySelector(".cardContainer3");
 
 var carouselItems = [];
 
@@ -12,26 +21,33 @@ async function getPosts() {
         const response = await fetch(url);
         const results = await response.json();
 
-        // console.log(results);
 
         for (let i = 0; i < results.length; i++) {
-            console.log(results[i]);
-
-
-            if (i < 4) {
-
-                carousel.innerHTML += 
-                `<a href="specific.html?id=${results[i].id}" class="displayed">
+            
+            if(i < 4) {
+                cardContainer1.innerHTML += 
+                `
+                <a href="specific.html?id=${results[i].id}" class="displayed postLink">
                     <div class="carouselCard">
                         <h5>${results[i].title.rendered}</h5>
                         <img src="${results[i].featured_media_src_url}" class="featuredImage">
                     </div>
                  </a>  
                 `
-
+            } else if (i < 8) {
+                cardContainer2.innerHTML += 
+                `
+                <a href="specific.html?id=${results[i].id}" class="displayed postLink">
+                    <div class="carouselCard">
+                        <h5>${results[i].title.rendered}</h5>
+                        <img src="${results[i].featured_media_src_url}" class="featuredImage">
+                    </div>
+                 </a>  
+                `
             } else {
-                carousel.innerHTML += 
-                `<a href="specific.html?id=${results[i].id}" class="displayedNone">
+                cardContainer3.innerHTML += 
+                `
+                <a href="specific.html?id=${results[i].id}" class="displayed postLink">
                     <div class="carouselCard">
                         <h5>${results[i].title.rendered}</h5>
                         <img src="${results[i].featured_media_src_url}" class="featuredImage">
@@ -39,17 +55,36 @@ async function getPosts() {
                  </a>  
                 `
             }
-
         }
 
 
+        const buttons = document.querySelectorAll(".button");
+        console.log(buttons)
+
+
         buttonNext.addEventListener('click', function() {
-            console.log("utz");
+
+            if(carouselContainer.style.justifyContent === "") {
+                carouselContainer.style.justifyContent = "center";
+                console.log(carouselContainer.style.justifyContent)
+             } else if(carouselContainer.style.justifyContent === "center") {
+                carouselContainer.style.justifyContent = "flex-end";
+                console.log(carouselContainer.style.justifyContent)
+             }
+ 
         })
 
 
         buttonPrev.addEventListener('click', function() {
-            console.log("utz");
+            
+            if(carouselContainer.style.justifyContent === "flex-end") {
+                carouselContainer.style.justifyContent = "center";
+                console.log(carouselContainer.style.justifyContent)
+            } else if(carouselContainer.style.justifyContent === "center") {
+                carouselContainer.style.justifyContent = "flex-start";
+                console.log(carouselContainer.style.justifyContent)
+            }
+            
         })
 
 
