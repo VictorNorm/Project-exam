@@ -18,6 +18,14 @@
   }
 
 
+/* Variables --------------------------- */
+
+:root {
+    --light-grey: rgb(247, 247, 247);
+}
+
+
+
 /* Nav --------------------------- */
 
 nav {
@@ -25,6 +33,7 @@ nav {
     display: flex;
     padding: 12px;
     justify-content: space-between;
+    
 }
 
 .h1Container {
@@ -82,7 +91,10 @@ main {
 } */
 
 .featuredImage {
-    max-height: 90%;
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 
@@ -92,23 +104,40 @@ main {
 
 .carouselContainer {
     display: flex;
-    border: 1px solid black;
-    margin: 30px;
-    padding: 30px;
+    /* border: 1px solid blue; */
+    margin: 30px auto;
+    /* padding: 30px; */
+    width: 900px;
     justify-content: flex-start;
     overflow: hidden;
+    
+}
+
+.carousel {
+    /* position: relative; */
+    display: flex;
+    max-height: 400px;
+    transition: all 1s;
+    box-sizing: content-box;
+    
+}
+
+.slider {
+    display: flex;
+    height: 100%;
+    width: 300%;
     
 }
 
 .cardContainer1,
 .cardContainer2,
 .cardContainer3 {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     display: flex;
-    margin: 0px 10px;
+    /* margin: 0px 10px; */
     transition: all 1s;
+    flex-basis: 100%;
 }
-
 
 .buttonContainer {
     display: flex;
@@ -117,24 +146,26 @@ main {
     margin: 0 auto;
 }
 
-.carousel {
-    position: relative;
-    display: flex;
-    max-height: 400px;
-    transition: all 1s;
-    /* right: -0%; */
-    
-}
 
 .carouselCard {
-    max-width: 300px;
-    height: 180px;
-    margin: 10px;
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 1px solid black;
-    padding: 5px;
+    min-height: 200px;
+    max-height: 18vh;
+    min-width: 200px;
+    /* max-width: 17vw; */
+    
+    /* display: inline-flex;
+    flex-direction: column; */
+    /* justify-content: space-between; */
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+    background-position: center;
+    background-size: cover;
+    background-clip: content-box;
+}
+
+.carouselCardHeading {
+background-color: white;
 }
 
 .carousel__button--next,
@@ -160,13 +191,8 @@ main {
 
 .displayed {
     display: block;
+    max-width: 20vw;
 }
-
-.displayedNone {
-    display: none;
-}
-
-
 
 
 /* Specific page --------------------------- */
