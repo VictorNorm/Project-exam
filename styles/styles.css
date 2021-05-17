@@ -103,29 +103,29 @@ main {
 /* Carousel Container --------------------------- */
 
 .carouselContainer {
-    display: flex;
-    /* border: 1px solid blue; */
+    /* display: flex; */
+    border: 1px solid #ccc;
     margin: 30px auto;
-    /* padding: 30px; */
+    padding: 15px 0px;
     width: 900px;
     justify-content: flex-start;
     overflow: hidden;
     
 }
 
-.carousel {
-    /* position: relative; */
+/* .carousel {
+    position: relative;
     display: flex;
     max-height: 400px;
     transition: all 1s;
     box-sizing: content-box;
-    
-}
+} */
 
 .slider {
     display: flex;
     height: 100%;
     width: 300%;
+    transition: all 1s;
     
 }
 
@@ -135,6 +135,7 @@ main {
     /* border: 1px solid green; */
     display: flex;
     /* margin: 0px 10px; */
+    justify-content: space-evenly;
     transition: all 1s;
     flex-basis: 100%;
 }
@@ -148,14 +149,9 @@ main {
 
 
 .carouselCard {
-    min-height: 200px;
+    min-height: 90%;
     max-height: 18vh;
-    min-width: 200px;
-    /* max-width: 17vw; */
-    
-    /* display: inline-flex;
-    flex-direction: column; */
-    /* justify-content: space-between; */
+    min-width: 90%;
     padding: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
     border-radius: 2px;
@@ -166,6 +162,7 @@ main {
 
 .carouselCardHeading {
 background-color: white;
+min-height: 30px;
 }
 
 .carousel__button--next,
@@ -189,9 +186,26 @@ background-color: white;
     opacity: 1;
 }
 
-.displayed {
+.postLink {
     display: block;
-    max-width: 20vw;
+    flex-basis: 24%;
+    min-height: 200px;
+    max-height: 18vh;
+    min-width: 200px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-clip: content-box;
+}
+
+.postLink h5 {
+    height: 40%;
+    font-size: 1rem;
+    color: black;
+    text-decoration: underline;
 }
 
 
@@ -224,4 +238,43 @@ background-color: white;
     font-style: italic;
     font-size: 20px;
     margin-bottom: 10px;
+}
+
+
+/* Media queries ---------------------------------- */
+
+@media screen and (max-width: 930px){
+
+.carouselContainer {
+    max-width: 90vw;
+}
+  
+.cardContainer1,
+.cardContainer2,
+.cardContainer3 {
+    flex-wrap: wrap;
+}
+
+.postLink {
+    margin: 10px 0px;
+}
+
+
+}
+
+
+@media screen and (max-width: 480px) {
+
+    .postLink {
+        min-width: 150px;
+        min-height: 150px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: bottom;
+    }
+
+    .postLink h5 {
+        height: 40%;
+    }
+
 }
