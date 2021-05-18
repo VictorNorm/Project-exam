@@ -5,7 +5,6 @@
     src: url("https://fonts.google.com/specimen/Roboto?query=Roboto");
 }
 
-
 * {
     padding: 0;
     margin: 0;
@@ -18,10 +17,11 @@
   }
 
 
+
 /* Variables --------------------------- */
 
 :root {
-    --light-grey: rgb(247, 247, 247);
+    --light-grey: rgb(204, 204, 204);
 }
 
 
@@ -33,7 +33,8 @@ nav {
     display: flex;
     padding: 12px;
     justify-content: space-between;
-    
+    max-width: 1300px;
+    margin: 0 auto;
 }
 
 .h1Container {
@@ -77,18 +78,49 @@ nav li {
     transition: transform 0.1s;
 }
 
+
+
 /* Index --------------------------- */
 
 main {
     max-width: 1300px;
     margin: 0 auto;
+    border: 1px solid var(--light-grey);
+    min-height: 100vh;
 }
 
+.backgroundImage {
+    width: 100%;
+    min-height: 50vh;
+    background-image: url(/images/earth-1272884_1920.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column-reverse;
+    
+}
+
+.backgroundImage p {
+    color: white;
+    margin: 10px 0px 10px 30px;
+    font-size: 1.2rem;
+}
+
+.backgroundImage p:first-child {
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+h2 {
+    margin: 40px auto;
+    text-align: center;
+    border-bottom: 2px solid var(--light-grey);
+    width: 200px;
+}
+
+
 /* Images --------------------------- */
-/* 
-.featuredImageSmall {
-    max-height: 300px;
-} */
 
 .featuredImage {
     display: block;
@@ -99,34 +131,24 @@ main {
 
 
 
-
 /* Carousel Container --------------------------- */
 
 .carouselContainer {
     /* display: flex; */
-    border: 1px solid #ccc;
+    border-top: 2px solid var(--light-grey);
+    border-bottom: 2px solid var(--light-grey);
     margin: 30px auto;
     padding: 15px 0px;
     width: 900px;
     justify-content: flex-start;
     overflow: hidden;
-    
 }
-
-/* .carousel {
-    position: relative;
-    display: flex;
-    max-height: 400px;
-    transition: all 1s;
-    box-sizing: content-box;
-} */
 
 .slider {
     display: flex;
     height: 100%;
     width: 300%;
-    transition: all 1s;
-    
+    transition: all 1s;    
 }
 
 .cardContainer1,
@@ -146,7 +168,6 @@ main {
     width: 130px;
     margin: 0 auto;
 }
-
 
 .carouselCard {
     min-height: 90%;
@@ -178,7 +199,6 @@ min-height: 30px;
     align-self: center;
 }
 
-
 .carousel__button--next:hover,
 .carousel__button--prev:hover {
     background-color: rgb(235, 229, 229);
@@ -207,6 +227,7 @@ min-height: 30px;
     color: black;
     text-decoration: underline;
 }
+
 
 
 /* Specific page --------------------------- */
@@ -241,6 +262,7 @@ min-height: 30px;
 }
 
 
+
 /* Media queries ---------------------------------- */
 
 @media screen and (max-width: 930px){
@@ -258,7 +280,6 @@ min-height: 30px;
 .postLink {
     margin: 10px 0px;
 }
-
 
 }
 
