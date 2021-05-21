@@ -22,8 +22,9 @@
 
 :root {
     --light-grey: rgb(204, 204, 204);
+    --dark-grey: rgb(95, 94, 94);
+    --green: rgb(7, 180, 7);
 }
-
 
 
 /* Nav --------------------------- */
@@ -65,19 +66,18 @@ nav ul :hover {
     transform: scale(1.1);
 }
 
-nav ul :nth-child(2) {
-    border-right: 2px solid gray;
-    border-left: 2px solid gray;
-}
-
 
 nav li {
+    border-right: 2px solid gray;
     list-style: none;
     display: inline-block;
     padding: 0px 10px;
     transition: transform 0.1s;
 }
 
+nav li:last-child {
+    border: none;
+}
 
 
 /* Index --------------------------- */
@@ -85,8 +85,9 @@ nav li {
 main {
     max-width: 1300px;
     margin: 0 auto;
-    border: 1px solid var(--light-grey);
     min-height: 100vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+    padding-bottom: 30px;
 }
 
 .backgroundImage {
@@ -98,13 +99,13 @@ main {
     background-position: center;
     display: flex;
     flex-direction: column-reverse;
-    
 }
 
 .backgroundImage p {
     color: white;
     margin: 10px 0px 10px 30px;
     font-size: 1.2rem;
+    max-width: 500px;
 }
 
 .backgroundImage p:first-child {
@@ -117,6 +118,35 @@ h2 {
     text-align: center;
     border-bottom: 2px solid var(--light-grey);
     width: 200px;
+}
+
+.blogLink {
+    margin: 30px;
+    text-align: center;
+}
+
+.blogLink h3 {
+    margin: 30px;
+    color: black;
+    text-decoration: underline;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid var(--light-grey);
+    border-top-color: rgb(95, 94, 94);
+    margin: 20px auto;
+    animation: 1s spin infinite ease-in-out;
+}
+
+@keyframes spin {
+    to{
+        transform: rotate(360deg);
+    }
 }
 
 
@@ -228,6 +258,76 @@ min-height: 30px;
     text-decoration: underline;
 }
 
+/* Blog ------------------------------------ */
+
+.blogsContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.blogCard {
+    margin: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+    display: flex;
+    min-height: 250px;
+    border: 1px solid var(--light-grey);
+    border-radius: 2px;
+    color: black;
+}
+
+.blogCard:hover {
+    border-color: var(--dark-grey);
+}
+
+.blogImage {
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+    overflow: hidden;
+}
+
+
+.blogCard:hover .blogImage,
+.blogCard:focus .blogImage {
+    transform: scale(1.1);
+}
+
+
+.blogInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.blogInfoHeading {
+    text-decoration: underline;
+}
+
+.blogInfo p {
+    margin: 3px 0px;
+}
+
+.blogInfo .author,
+.blogInfo .time {
+    font-style: italic;
+}
+
+.blogImageWrapper {
+    overflow: hidden;
+}
+
+.blogImageWrapper,
+.blogInfo {
+    flex-basis: 50%;
+}
+
+
+
 
 
 /* Specific page --------------------------- */
@@ -261,6 +361,88 @@ min-height: 30px;
     margin-bottom: 10px;
 }
 
+/* About ------------------------------------------ */
+
+.aboutContent {
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.aboutContent p {
+    margin: 16px 0px;
+}
+
+/* Contact -----------------------------------------*/
+
+.contactForm {
+    border: 1px solid var(--light-grey);
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+}
+
+.contactForm label:nth-child(1n+2) {
+    margin-bottom: 4px;
+    margin-top: 30px;
+}
+
+.contactForm input {
+    height: 30px;
+}
+
+#contactFormButton {
+    padding: 15px;
+    width: 160px;
+    margin: 30px auto;
+    background-color: var(--green);
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: all 200ms;
+}
+
+.buttonAnimation:hover {
+    scale: 1.1;
+}
+
+.buttonAnimation:active {
+    color: white;
+}
+
+.error {
+    border: 2px solid rgb(255, 0, 0, 0.75);
+    border-radius: 2px;
+    padding: 5px;
+    margin: 5px 0px;
+    color: rgb(255, 0, 0);
+    display: none;
+}
+
+.submissionSuccessful {
+    font-size: 18px;
+    background-color: var(--green);
+    color: black;
+    padding: 15px;
+    margin: 10px auto;
+    border-radius: 5px;
+    display: none;
+}
+
+
+/* Footer ----------------------------------------- */
+
+
+footer {
+    margin: 0px auto;
+    max-width: 1300px;
+    min-height: 200px;
+    /* border: 1px solid black; */
+    background-color: rgb(40, 40, 43);
+}
 
 
 /* Media queries ---------------------------------- */

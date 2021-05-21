@@ -21,10 +21,46 @@
         </a>
         <ul>
             <li><a href="index.html">Home</a></li>
+            <li><a href="blog.html">Blog</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
+    <main>
+        <div class="backgroundImage">
+            <p>Richard Dawkins</p>
+            <p>"The solution often turns out more beautiful than the puzzle.."</p>
+        </div>
+        <form action="" class="contactForm">
+            <label for="name">Full name (minimum 5 characters)</label>
+            <input type="text" name="name" id="name">
+            <div class="error nameError">Please enter a valid name</div>
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+            <div class="error emailError">Please enter a valid email</div>
+
+            <label for="subject">Subject (minimum 15 characters)</label>
+            <input type="text" name="subject" id="subject">
+            <div class="error subjectError">Please enter a valid subject</div>
+
+            <label for="message">Your message (minimum 25 characters)</label>
+            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            <div class="error messageError">Message is to short, please try again</div>
+
+            <button type="submit" id="contactFormButton" class="buttonAnimation">Submit</button>
+            <div class="submissionSuccessful">Your message has been sent successfully!</div>
+        </form>
+    </main>
+    <footer>
+        <section>
+            
+        </section>
+        <section>
+
+        </section>
+    </footer>
+    <script src="js/contact.js"></script>
 </body>
 
 </html>

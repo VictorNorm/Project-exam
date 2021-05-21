@@ -15,6 +15,8 @@ const cardContainer1 = document.querySelector(".cardContainer1");
 const cardContainer2 = document.querySelector(".cardContainer2");
 const cardContainer3 = document.querySelector(".cardContainer3");
 
+const spinner = document.querySelector(".spinner");
+
 var carouselItems = [];
 
 async function getPosts() {
@@ -22,6 +24,9 @@ async function getPosts() {
 
         const response = await fetch(url);
         const results = await response.json();
+
+
+        spinner.style.display = "none";
 
         for (let i = 0; i < results.length; i++) {
 
@@ -47,9 +52,7 @@ async function getPosts() {
                     </a>  
                     `;
             }
-
         }
-
 
     } catch (error) {
         console.log(error);
