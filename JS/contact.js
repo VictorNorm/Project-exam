@@ -70,7 +70,7 @@ form.onsubmit = function (event) {
         message.value = "";
         submissionSuccessful.style.display = "none";
         button.style.display = "block";
-    }, 4000);
+    }, 6000);
     return false;}
 
 }
