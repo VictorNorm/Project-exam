@@ -490,6 +490,10 @@ footer h3 {
     text-decoration: underline;
 }
 
+.footerList a:hover {
+    color: #ccc;
+}
+
 .fa-youtube {
     color: red;
     margin-right: 5px;
