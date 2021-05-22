@@ -118,8 +118,9 @@ showMore.addEventListener('click', (event) => {
     for(let i = 0; i < blogCards.length; i++){
         if(blogCards[i].classList[1] === "hidden" && i < counter) {
             blogCards[i].classList.remove("hidden");
-        } if (counter > blogCards.length) {
+        } if (counter >= blogCards.length) {
             console.log(counter);
+            showMore.style.display = "none";
         }
     }
 });
