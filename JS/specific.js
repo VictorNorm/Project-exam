@@ -1,11 +1,15 @@
 const featuredImageContainer = document.querySelector(".featuredImageContainer");
 const textContainer = document.querySelector(".textContainer");
 const dateContainer = document.querySelector(".dateContainer");
+const imageContainer = document.querySelector(".imageContainer");
 
+const modal = document.querySelector(".modal");
 const dateAndAuthorContainer = document.querySelector(".dateAndAuthorContainer");
 
+const body = document.querySelector("body");
+
 const title = document.querySelector("#title");
-console.log(title)
+
 
 const queryString = document.location.search;
 const parameters = new URLSearchParams(queryString);
@@ -31,7 +35,31 @@ async function getSpecificPost() {
         textContainer.innerHTML += 
         `<h1>${details.title.rendered}</h1>
         ${details.content.rendered}
-        `
+        `;
+
+        const figureHolder = document.querySelectorAll("figure");
+        let clickableImage = figureHolder[0];
+        console.log(figureHolder[0].firstChild.src)
+
+        modal.innerHTML = `<img src="${figureHolder[0].firstChild.src}">`;
+        imageContainer.innerHTML = `<img src="${figureHolder[0].firstChild.src}" class="modalImage">`;
+
+        // clickableImage.addEventListener('click', (e) => {
+        //     modal.classList.add("show");
+        //     body.style.opacity = "0.6";
+        //     document.querySelector(".modalImage").style.opacity = "1";
+            
+        // })
+
+        document.addEventListener('click', (event) => {
+            if(event.target.closest(".imageContainer")) {
+                modal.classList.remove("hidden");
+            } else {
+                modal.classList.add("hidden");
+            }
+            
+        })
+        
 
         console.log(details)
     } catch (error) {
@@ -39,6 +67,9 @@ async function getSpecificPost() {
     }
 }
 
+function bonk() {
+    console.log("bonk");
+}
 
 
 getSpecificPost();
