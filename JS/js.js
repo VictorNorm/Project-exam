@@ -73,7 +73,6 @@ buttonNext.addEventListener('click', () => {
 })
 
 
-
 buttonPrev.addEventListener('click', () => {
     if (slider.style.transform === "translateX(-66.6%)") {
         slider.style.transform = "translateX(-33.3%)";
