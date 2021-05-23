@@ -98,7 +98,7 @@ main {
 
 .backgroundImage {
     width: 100%;
-    min-height: 50vh;
+    min-height: 35vh;
     background-image: url(/images/earth-1272884_1920.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -128,16 +128,20 @@ main {
 }
 
 .blogLink {
-    margin: 30px;
+    margin: 0px;
     text-align: center;
 }
 
 .blogLink h3 {
-    margin: 30px;
+    margin: 50px;
     color: black;
     text-decoration: underline;
     font-style: italic;
     font-weight: 400;
+}
+
+.blogLink h3:hover {
+    color: rgb(105, 105, 105);
 }
 
 .spinner {
@@ -170,11 +174,15 @@ main {
 
 /* Carousel Container --------------------------- */
 
+
+.carouselWrapper {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .carouselContainer {
-    /* display: flex; */
     border-top: 2px solid var(--light-grey);
     border-bottom: 2px solid var(--light-grey);
-    margin: 30px auto;
     padding: 15px 0px;
     width: 900px;
     justify-content: flex-start;
@@ -225,22 +233,29 @@ min-height: 30px;
 
 .carousel__button--next,
 .carousel__button--prev {
-    border: 2px solid black;
+    border: 1px solid black;
     opacity: 1;
     font-weight: 400;
-    height: 30px;
-    width: 30px;
-    border-radius: 50px;
-    text-align: center;
+    min-height: 30px;
+    min-width: 30px;
+    border-radius: 50%;
     font-size: 22px;
     align-self: center;
+    display: block;
+    margin: 10px;
+    transition: all 150ms;
 }
 
 .carousel__button--next:hover,
 .carousel__button--prev:hover {
-    background-color: rgb(235, 229, 229);
+    background-color: #ccc;
     cursor: pointer;
     opacity: 1;
+}
+
+.carousel__button--next:active,
+.carousel__button--prev:active {
+    transform: scale(1.15);
 }
 
 .postLink {
@@ -366,17 +381,20 @@ min-height: 30px;
     height: 45vh;
     background-repeat: no-repeat;
     background-size: cover;
-    margin: 40px auto;;
+    margin-top: 40px;
 }
 
-.dateContainer {
-    width: 200px;
+.specificContainer {
+    max-width: 600px;
     margin: 0 auto;
+}
+
+.dateAndAuthorContainer p {
+    font-style: italic;
 }
 
 .textContainer {
-    max-width: 600px;
-    margin: 0 auto;
+    margin: 30px 0px;
 }
 
 .textContainer p {
@@ -457,7 +475,7 @@ min-height: 30px;
     background-color: var(--green);
     color: black;
     padding: 15px;
-    margin: 10px auto;
+    margin: 30px auto;
     border-radius: 5px;
     display: none;
 }
@@ -518,8 +536,22 @@ footer section {
     font-size: 30px;
 }
 
+.fa-facebook:hover,
+.fa-instagram:hover,
+.fa-twitter:hover {
+    color: rgb(192, 191, 191);
+}
+
 .titleContainer a {
    display: flex;
+}
+
+.titleContainer h2:hover {
+    color: #ccc;
+}
+
+.titleContainer .fas {
+margin: 10px;
 }
 
 .titleContainer h2 {
@@ -549,6 +581,24 @@ footer section {
 }
 
 
+@media screen and (max-width: 750px) {
+
+    .blogCard {
+        flex-direction: column;
+    }
+
+    .blogImageWrapper {
+        min-height: 150px;
+    }
+
+    
+    .blogInfoHeading {
+        margin-bottom: 10px;
+    }
+
+}
+
+
 @media screen and (max-width: 480px) {
 
     .postLink {
@@ -558,6 +608,12 @@ footer section {
         background-repeat: no-repeat;
         background-position: bottom;
     }
+
+
+    .shortText  {
+        display: none;
+    }
+
 
     .postLink h5 {
         height: 40%;

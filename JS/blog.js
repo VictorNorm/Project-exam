@@ -1,25 +1,21 @@
 const url = "https://hjulbent.no/project-exam/wp-json/wp/v2/posts?per_page=12&_embed";
 
 const spinner = document.querySelector(".spinner");
-
 const blogsContainer = document.querySelector(".blogsContainer");
-
-
+const displaying = document.querySelector(".displaying");
 
 async function getPosts() {
     try {
 
         const response = await fetch(url);
         const results = await response.json();
-        console.log(results)
+        // console.log(results)
         
         spinner.style.display = "none";
 
         for (let i = 0; i < results.length; i++) {
             
-            
             let cleanText = stripHtml(results[i].excerpt.rendered)
-            
             let length = cleanText.length > 150 ? 150 : cleanText.length
             /*
             let length = 0
@@ -31,7 +27,6 @@ async function getPosts() {
             */
             let shortText = stringCutter(cleanText, length);
             
-            
             if (i < 4) {
                 blogsContainer.innerHTML +=
                     `
@@ -41,7 +36,7 @@ async function getPosts() {
                         </div>
                         <div class="blogInfo">
                             <h3 class="blogInfoHeading">${results[i].title.rendered}</h3>
-                             <p>${shortText}...</p>
+                             <p class="shortText">${shortText}...</p>
                              <div class="authorAndTime">
                                 <p class="author">${results[i]._embedded.author[0].name}.</p>
                                 <p class="time">${results[i].modified.slice(0, 10)}.</p>
@@ -58,7 +53,7 @@ async function getPosts() {
                         </div>
                         <div class="blogInfo">
                             <h3 class="blogInfoHeading">${results[i].title.rendered}</h3>
-                             <p>${shortText}...</p>
+                             <p class="shortText">${shortText}...</p>
                              <div class="authorAndTime">
                                 <p class="author">${results[i]._embedded.author[0].name}.</p>
                                 <p class="time">${results[i].modified.slice(0, 10)}.</p>
@@ -76,8 +71,6 @@ async function getPosts() {
 
 getPosts();
 
-
-
 // Cutting out text for blog cards ------------------------------------------//
 
 function stringCutter(string, length) {
@@ -90,7 +83,6 @@ function stringCutter(string, length) {
     return test.slice(0, test.length-counter);
 }
 
-
 function stripHtml(html){
     // Create a new div element
     var temporalDivElement = document.createElement("div");
@@ -100,14 +92,11 @@ function stripHtml(html){
     return temporalDivElement.textContent || temporalDivElement.innerText || "";
 }
 
-
 // Show more ----------------------------------------------------------------//
 
-
 const showMore = document.querySelector(".showMore");
-
 const blogCards = document.getElementsByClassName("blogCard");
-
+console.log(blogCards)
 
 let counter = 4;
 
@@ -125,6 +114,4 @@ showMore.addEventListener('click', (event) => {
     }
 });
 
-console.log(counter);
 
-// showMore.disabled = true;

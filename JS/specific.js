@@ -1,6 +1,8 @@
 const featuredImageContainer = document.querySelector(".featuredImageContainer");
 const textContainer = document.querySelector(".textContainer");
-const dateContainer = document.querySelector(".dateContainer")
+const dateContainer = document.querySelector(".dateContainer");
+
+const dateAndAuthorContainer = document.querySelector(".dateAndAuthorContainer");
 
 const queryString = document.location.search;
 const parameters = new URLSearchParams(queryString);
@@ -10,7 +12,7 @@ console.log(id);
 
 
 
-const url = "https://hjulbent.no/project-exam/wp-json/wp/v2/posts/" + id;
+const url = "https://hjulbent.no/project-exam/wp-json/wp/v2/posts/" + id + "/?_embed"
 
 async function getSpecificPost() {
     try {
@@ -20,7 +22,9 @@ async function getSpecificPost() {
         featuredImageContainer.style.backgroundImage = `url(${details.featured_media_src_url})`;
 
         let dateSliced = details.date.slice(0, 10);
-        dateContainer.innerHTML = dateSliced + "";
+        dateAndAuthorContainer.innerHTML = 
+        `<p class="date">${dateSliced}</p>
+        <p class="authorName">${details._embedded.author[0].name}.</p>`;
 
         textContainer.innerHTML += 
         `<h1>${details.title.rendered}</h1>

@@ -25,7 +25,6 @@ async function getPosts() {
         const response = await fetch(url);
         const results = await response.json();
 
-
         spinner.style.display = "none";
 
         for (let i = 0; i < results.length; i++) {
