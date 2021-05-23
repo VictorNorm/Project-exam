@@ -61,13 +61,8 @@ async function getPosts() {
 
 getPosts();
 
-console.log(carouselContainer.scrollWidth);
-
-
 
 // Carousel----------------------------------------------/
-
-// var carouselPosition = carousel.style.transform;
 
 buttonNext.addEventListener('click', () => {
     if (slider.style.transform === "") {

@@ -408,6 +408,18 @@ min-height: 30px;
     margin-bottom: 10px;
 }
 
+.wp-block-image {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 30px auto;
+}
+
+.textContainer img {
+    width: 100px;
+    height: 100px;
+}
+
 /* About ------------------------------------------ */
 
 .aboutContent {
@@ -587,7 +599,8 @@ margin: 10px;
         flex-direction: column;
     }
 
-    .blogImageWrapper {
+    .blogImageWrapper,
+    .blogImage {
         min-height: 150px;
     }
 
