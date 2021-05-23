@@ -27,13 +27,13 @@ async function getSpecificPost() {
         featuredImageContainer.style.backgroundImage = `url(${details.featured_media_src_url})`;
 
         let dateSliced = details.date.slice(0, 10);
-        dateAndAuthorContainer.innerHTML = 
-        `<p class="date">${dateSliced}</p>
+        dateAndAuthorContainer.innerHTML =
+            `<p class="date">${dateSliced}</p>
         <p class="authorName">${details._embedded.author[0].name}.</p>`;
 
         title.innerHTML = details.title.rendered;
-        textContainer.innerHTML += 
-        `<h1>${details.title.rendered}</h1>
+        textContainer.innerHTML +=
+            `<h1>${details.title.rendered}</h1>
         ${details.content.rendered}
         `;
 
@@ -48,18 +48,18 @@ async function getSpecificPost() {
         //     modal.classList.add("show");
         //     body.style.opacity = "0.6";
         //     document.querySelector(".modalImage").style.opacity = "1";
-            
+
         // })
 
         document.addEventListener('click', (event) => {
-            if(event.target.closest(".imageContainer")) {
+            if (event.target.closest(".imageContainer")) {
                 modal.classList.remove("hidden");
             } else {
                 modal.classList.add("hidden");
             }
-            
+
         })
-        
+
 
         console.log(details)
     } catch (error) {
@@ -73,5 +73,3 @@ function bonk() {
 
 
 getSpecificPost();
-
-

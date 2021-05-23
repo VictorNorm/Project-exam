@@ -20,7 +20,10 @@ body {
     background-color: rgba(160, 160, 160, 0.164);
 }
 
-
+.active {
+    border: 1px solid #ccc;
+    padding: 6px;
+}
 
 
 /* Variables --------------------------- */
@@ -52,7 +55,6 @@ nav {
     margin: 3px 8px;
 }
 
-
 nav h1,
 nav a {
     color: white;
@@ -71,17 +73,12 @@ nav ul :hover {
     transform: scale(1.1);
 }
 
-
 nav li {
-    border-right: 2px solid gray;
+
     list-style: none;
     display: inline-block;
     padding: 0px 10px;
     transition: transform 0.1s;
-}
-
-nav li:last-child {
-    border: none;
 }
 
 
@@ -118,7 +115,6 @@ main {
     margin-bottom: 30px;
     font-style: italic;
 }
-
 
 .secondHeading {
     margin: 40px auto;
@@ -171,9 +167,7 @@ main {
 }
 
 
-
 /* Carousel Container --------------------------- */
-
 
 .carouselWrapper {
     display: flex;
@@ -312,12 +306,10 @@ main {
     overflow: hidden;
 }
 
-
 .blogCard:hover .blogImage,
 .blogCard:focus .blogImage {
     transform: scale(1.1);
 }
-
 
 .blogInfo {
     display: flex;
@@ -373,7 +365,6 @@ main {
 }
 
 
-
 /* Specific page --------------------------- */
 
 .featuredImageContainer {
@@ -419,7 +410,6 @@ main {
     display: none;
 }
 
-
 .modal {
     position: fixed;
     top: 50%;
@@ -429,7 +419,6 @@ main {
     pointer-events: none;
     /* display: none; */
 }
-
 
 .modalImage {
     display: block;
@@ -525,7 +514,6 @@ main {
 
 
 /* Footer ----------------------------------------- */
-
 
 footer {
     margin: 0px auto;
@@ -645,7 +633,6 @@ footer section {
         min-height: 150px;
     }
 
-
     .blogInfoHeading {
         margin-bottom: 10px;
     }
@@ -662,7 +649,6 @@ footer section {
         background-repeat: no-repeat;
         background-position: bottom;
     }
-
 
     .shortText {
         display: none;

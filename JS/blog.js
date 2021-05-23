@@ -10,11 +10,11 @@ async function getPosts() {
         const response = await fetch(url);
         const results = await response.json();
         // console.log(results)
-        
+
         spinner.style.display = "none";
 
         for (let i = 0; i < results.length; i++) {
-            
+
             let cleanText = stripHtml(results[i].excerpt.rendered)
             let length = cleanText.length > 150 ? 150 : cleanText.length
             /*
@@ -26,7 +26,7 @@ async function getPosts() {
             }
             */
             let shortText = stringCutter(cleanText, length);
-            
+
             if (i < 4) {
                 blogsContainer.innerHTML +=
                     `
@@ -61,7 +61,7 @@ async function getPosts() {
                         </div>
                     </a>  
                     `;
-            } 
+            }
         }
 
     } catch (error) {
@@ -76,14 +76,14 @@ getPosts();
 function stringCutter(string, length) {
     var test = string.slice(0, length)
     let counter = 1;
-    while(test.charAt(test.length-counter) !== " ") {
+    while (test.charAt(test.length - counter) !== " ") {
         counter++;
-        if(counter > length) break;
-    } 
-    return test.slice(0, test.length-counter);
+        if (counter > length) break;
+    }
+    return test.slice(0, test.length - counter);
 }
 
-function stripHtml(html){
+function stripHtml(html) {
     // Create a new div element
     var temporalDivElement = document.createElement("div");
     // Set the HTML content with the providen
@@ -101,17 +101,16 @@ console.log(blogCards)
 let counter = 4;
 
 showMore.addEventListener('click', (event) => {
-    
-    counter = counter +4;
+
+    counter = counter + 4;
     console.log(counter);
-    for(let i = 0; i < blogCards.length; i++){
-        if(blogCards[i].classList[1] === "hidden" && i < counter) {
+    for (let i = 0; i < blogCards.length; i++) {
+        if (blogCards[i].classList[1] === "hidden" && i < counter) {
             blogCards[i].classList.remove("hidden");
-        } if (counter >= blogCards.length) {
+        }
+        if (counter >= blogCards.length) {
             console.log(counter);
             showMore.style.display = "none";
         }
     }
 });
-
-
