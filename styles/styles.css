@@ -10,15 +10,15 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Roboto', 'Arial';
-  }
-  
-  a {
-      text-decoration: none;
-  }
+}
 
-  body {
-      background-color: rgba(160, 160, 160, 0.164);
-  }
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: rgba(160, 160, 160, 0.164);
+}
 
 
 
@@ -155,7 +155,7 @@ main {
 }
 
 @keyframes spin {
-    to{
+    to {
         transform: rotate(360deg);
     }
 }
@@ -193,7 +193,7 @@ main {
     display: flex;
     height: 100%;
     width: 300%;
-    transition: all 1s;    
+    transition: all 1s;
 }
 
 .cardContainer1,
@@ -227,8 +227,8 @@ main {
 }
 
 .carouselCardHeading {
-background-color: white;
-min-height: 30px;
+    background-color: white;
+    min-height: 30px;
 }
 
 .carousel__button--next,
@@ -421,13 +421,13 @@ min-height: 30px;
 
 
 .modal {
-position: fixed;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-z-index: 1000;
-pointer-events: none;
-/* display: none; */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* z-index: 1000; */
+    pointer-events: none;
+    /* display: none; */
 }
 
 
@@ -586,7 +586,7 @@ footer section {
 }
 
 .titleContainer a {
-   display: flex;
+    display: flex;
 }
 
 .titleContainer h2:hover {
@@ -594,7 +594,7 @@ footer section {
 }
 
 .titleContainer .fas {
-margin: 10px;
+    margin: 10px;
 }
 
 .titleContainer h2 {
@@ -605,26 +605,36 @@ margin: 10px;
 
 /* Media queries ---------------------------------- */
 
-@media screen and (max-width: 930px){
+@media screen and (max-width: 930px) {
 
-.carouselContainer {
-    max-width: 90vw;
-}
-  
-.cardContainer1,
-.cardContainer2,
-.cardContainer3 {
-    flex-wrap: wrap;
-}
+    .carouselContainer {
+        max-width: 90vw;
+    }
 
-.postLink {
-    margin: 10px 0px;
-}
+    .cardContainer1,
+    .cardContainer2,
+    .cardContainer3 {
+        flex-wrap: wrap;
+    }
+
+    .postLink {
+        margin: 10px 0px;
+    }
 
 }
 
 
 @media screen and (max-width: 750px) {
+
+    .modal img {
+        width: 300px;
+        height: 250px;
+    }
+
+    .textContainer {
+        max-width: 90%;
+        margin: 20px auto;
+    }
 
     .blogCard {
         flex-direction: column;
@@ -635,7 +645,7 @@ margin: 10px;
         min-height: 150px;
     }
 
-    
+
     .blogInfoHeading {
         margin-bottom: 10px;
     }
@@ -654,7 +664,7 @@ margin: 10px;
     }
 
 
-    .shortText  {
+    .shortText {
         display: none;
     }
 
