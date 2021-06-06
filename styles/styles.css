@@ -1,15 +1,15 @@
 /* Global styles, fonts --------------------------- */
 
 @font-face {
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    src: url("https://fonts.google.com/specimen/Roboto?query=Roboto");
+    font-family: 'Roboto', sans-serif;
+    src: url("https://fonts.google.com/specimen/Roboto?query=roboto");
 }
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', 'Arial';
+    /* font-family: 'Roboto', sans-serif; */
 }
 
 a {
@@ -17,6 +17,7 @@ a {
 }
 
 body {
+    font-family: 'Roboto', sans-serif;
     background-color: rgba(160, 160, 160, 0.164);
 }
 
